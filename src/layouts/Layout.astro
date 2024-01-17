@@ -1,0 +1,70 @@
+---
+import '@fontsource-variable/outfit';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='QR Component' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <footer>
+      <p class='footer-text'>
+        Challenge by <a
+          href='https://www.frontendmentor.io/home'
+          target='_blank'>Frontend Mentor</a
+        >. Coded by <a
+          href='https://www.linkedin.com/in/luciano-ferreyra'
+          target='_blank'>Luciano Ferreyra</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
+<style is:global>
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    color-scheme: dark light;
+    font-family: 'Outfit Variable', system-ui, sans-serif;
+  }
+  body {
+    background-color: #d6e2f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-text {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+    color: #1f3251;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 768px) {
+    .footer-text {
+      margin-top: 8px;
+    }
+  }
+  a {
+    color: #1f3251;
+  }
+</style>
